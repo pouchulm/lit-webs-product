@@ -1,0 +1,41 @@
+<section class="top-form">
+  <div class="container">
+    <h1 class="top-title">Music SNS</h1>
+    <div class="login-form">
+      <% if current_user.nil? %>
+        <form action='/signin' method="post">
+          <div class="row">
+            <div class="col">
+              <input class="form-control" type="text" id="name" name="name" placeholder="UserID">
+            </div>
+            <div class="col">
+              <input class="form-control" name="password" type ="password" placeholder ="Password">
+            </div>
+            <div class="">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+          </div>
+        </form>
+      <%end%>
+    </div>
+  </div>
+</section>
+
+<section class="timeline">
+<div class="container">
+  <h2>最新の投稿</h2>
+  <div class="flexcontainer">
+    <% @posts.each do |post| %>
+      <div class="flexitem">
+        <img src="<%= post["artwork_url"] %>"><br><br>
+        <p>Artist : <%= post["artist_name"] %></p>
+        <p>Title : <%= post["track_name"] %></p>
+        <p><a href="<%= post["preview_url"] %>">Sample</a></p>
+        <p>コメント：<%= post["comment"]%></p>
+        <%posted_user = User.find_by(id: post["user_id"])%>
+        <p>投稿者：<%= posted_user.name%></p>
+      </div>
+    <%end%>
+  </div>
+</div>
+</section>

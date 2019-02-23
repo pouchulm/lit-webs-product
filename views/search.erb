@@ -1,0 +1,53 @@
+<section class="search-form">
+  <div class="container">
+    <h3>検索フォーム</h3>
+      <form action="/search" method='post'>
+        <div class="input-group mb-3">
+                <input type="text" class="form-control" name="keyword" placeholder="キーワードを入力">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="submit">検索</button>
+                </div>
+              </div>
+      </form>
+  </div>
+</section>
+<section class="search-result">
+  <div class="container">
+    <h3>検索結果</h3>
+      <div class="resultcontainer" id="result">
+        <% if !@musics.nil? %>
+          <% @musics.each do |music| %>
+            <div class="flexitem">
+            <form action='/new' method='post'>
+              <img src="<%= music["artworkUrl100"] %>" class="">
+              <input type="hidden" name="artwork_url"
+              value="<%=music["artworkUrl100"]%>">
+              <p><%= music["artistName"] %></p>
+              <input type="hidden" name="artist_name"
+              value="<%=music["artistName"]%>">
+              <p><%= music["collectionName"] %></p>
+              <input type="hidden" name="collection_name"
+              value="<%=music["collectionName"]%>">
+              <p><%= music["trackName"] %></p>
+              <input type="hidden" name="track_name"
+              value="<%=music["trackName"]%>">
+              <a href="<%= music["previewUrl"] %>">サンプル</a>
+              <input type="hidden" name="preview_url"
+              value="<%=music["previewUrl"]%>">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" name="comment" placeholder="コメント">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="submit">投稿</button>
+                </div>
+              </div>
+
+              </form>
+            </div>
+          <%end%>
+        <%else%>
+          <p>検索結果がありません</p>
+        <%end%>
+    </div>
+
+</div>
+</section>

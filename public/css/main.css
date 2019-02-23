@@ -1,0 +1,92 @@
+body {
+  font-family: 'Varela Round',
+    'Kosugi Maru',
+    'Arial',
+    YuGothic,
+    'Yu Gothic',
+    'Hiragino Kaku Gothic ProN',
+    'ヒラギノ角ゴ ProN W3',
+    'メイリオ',
+    Meiryo,
+    'ＭＳ ゴシック',
+    sans-serif !important;
+}
+
+.flexcontainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexitem {
+  flex-basis: 320px;
+  width: 320px;
+  text-align: center;
+  font-size: 16px;
+  padding: 8PX;
+  margin: 16px 8px;
+  color: #333;
+  border: 1px solid #888;
+  border-radius: 32px;
+  box-shadow: 8px 8px 4px 0px #9c9c9c;
+}
+
+.resultcontainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+
+h1,
+h2,
+h3 {
+  font-family: 'Varela Round',
+    'Kosugi Maru'sans-serif;
+  text-align: center;
+}
+
+.search-form {
+  height: 128px;
+}
+
+.top-form {
+  height: 400px;
+  width: 100%;
+  background-position: center center;
+  background-image: url("/images/wallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.top-title {
+  color: #FFF;
+  display: block;
+  padding-top: 120px;
+
+}
+
+.login-form {
+  width: 60%;
+  display: block;
+  padding-top: 40px;
+  margin: 0 auto;
+}
+
+#signup-form {
+  padding-top: 40px;
+  margin: 0 auto;
+}
+
+.profile-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.search-form {
+  margin-top: 16px;
+}

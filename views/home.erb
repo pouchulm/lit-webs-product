@@ -1,0 +1,23 @@
+<section>
+  <div class="container">
+    <h2><%=current_user.name%>の投稿</h2>
+      <div class="flexcontainer">
+        <% @user_posts.each do |post|%>
+          <div class="flexitem">
+            <img src="<%= post["artwork_url"] %>"><br><br>
+            <p><%= post["artist_name"] %></p>
+            <p><%= post["collection_name"] %></p>
+            <p><%= post["track_name"] %></p>
+            <p><a href="<%= post["preview_url"] %>">サンプル</a></p>
+            <p>コメント：<%= post["comment"]%></p>
+            <form action="/posts/<%= post.id %>/edit" method="get">
+							<button class="btn btn-link" type="submit">編集</button>
+						</form>
+            <form action="/posts/<%= post.id %>/delete" method="post">
+							<button class="btn btn-link" type="submit">削除</button>
+						</form>
+          </div>
+        <%end%>
+      </div>
+  </div>
+</section>
