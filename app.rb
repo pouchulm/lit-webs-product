@@ -70,16 +70,16 @@ post '/signup' do
     icon_url: "",
     password_confirmation: params[:password_confirmation]
   )
+  new_user = User.last
 
   if params[:file]
     tempfile = params[:file][:tempfile]
     filename = params[:file][:filename]
     uploadfile =  Cloudinary::Uploader.upload(tempfile.path)
-    new_user = User.last
     new_user.update_attribute(:icon_url, uploadfile['url'])
+  else
+    new_user.update_attribute(:icon_url, 'https://res.cloudinary.com/dxmidg9g0/image/upload/v1550999377/animal_arupaka.png')
   end
-
-
   if user.persisted?
     session[:user] = user.id
     redirect '/search'
@@ -109,7 +109,6 @@ post '/search' do
   @musics = returned_json["results"]
 
   erb :search
-
 end
 
 post '/new' do

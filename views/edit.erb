@@ -1,10 +1,11 @@
 <section>
   <div class="container">
     <h2>コメントの更新</h2>
-    <form action="/posts/<%=@post.id%>/edit" method="post">
-      <input type="text" name="updated_comment"placeholder="ここにコメントを入力">
-      <button class="btn btn-primary" type="submit" value="更新"></button>
+    <form action="/posts/<%=@post.id%>/edit" method="post" >
+      <div class="edit-form" style="text-align:center;">
+      <input type="text" name="updated_comment"placeholder="<%=@post.comment%>">
+      <button class="btn btn-primary" type="submit" >更新</button>
+      </div>
     </form>
-
   </div>
 </section>

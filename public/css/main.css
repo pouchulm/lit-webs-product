@@ -12,6 +12,8 @@ body {
     sans-serif !important;
 }
 
+
+
 .flexcontainer {
   display: flex;
   flex-flow: column nowrap;
@@ -66,7 +68,6 @@ h3 {
   color: #FFF;
   display: block;
   padding-top: 120px;
-
 }
 
 .login-form {
